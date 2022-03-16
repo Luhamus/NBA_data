@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 import pandas as pd
 import numpy as np
+import os
+
+import sys
+sys.path.append("--")
 
 app = FastAPI()
+
 
 # Making relative paths for the data, on windows slashes would have to be turned around.
 # It is probably not the best way.
@@ -20,6 +25,17 @@ def getTeamNames():
 
 
 
+@app.get("/")
+def getIndex():
+    return {"Message" : "Hello!"}
+
+
+#@app.get("/sync")
+#def syncPlayers():  #  Currnetly only works for Unix type systems, which is not good
+#    os.system("rm " + relPathPlayers + "*")
+#    getData.getPlayerData(getData.url, getData.headers)
+    
+     
 
 @app.get("/teams")
 def getTeams():
