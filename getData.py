@@ -59,12 +59,14 @@ def getTeamsData(url, headers):
 
 def getPlayerData(url, headers):
 
+    print("Stared reading players data")
+
     # First request is made just to get the amount of pages that must be looped through
     querystring = {"per_page":"100","page":"0"}
     response = requests.request("GET", url+"players", headers=headers, params=querystring)
     pageCount = response.json()["meta"]["total_pages"]
     
-    
+    print("Pages to read: "+str(pageCount)) 
     for el in range(1, pageCount+1):
     
         # Requesting pages in loop till pageCount
