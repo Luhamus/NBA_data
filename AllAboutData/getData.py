@@ -13,16 +13,13 @@ Used API: https://rapidapi.com/theapiguy/api/free-nba/
 '''
 
 import os
+import utils #  Some functions to delete and create directories for data
 import requests
 import pandas as pd
-from utils import osSpecific  #  Some functions to delete and create directories for data
 from dotenv import load_dotenv
 
-
-# Loading API key from environment variables.
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
-
 
 # API request details
 url = "https://free-nba.p.rapidapi.com/"
@@ -31,27 +28,21 @@ headers = {
             "x-rapidapi-key": API_KEY
           }
 
-# File name variables to store data in 
-if osSpecific.whichOs() == "windows":
+
+# Createing file name variables to store data in 
+if utils.whichOs() == "windows":
     teamsFile = "Data/NBAteams.csv"
     playersDir = "Data\Players\\"
 else:
     teamsFile = "Data/NBAteams.csv"
     playersDir = "Data/Players/"
 
-# Createubg new Data dir to avoid duplicates (due appending)
-osSpecific.deleteDataDir()
-osSpecific.addDataDir()
-
-
 
 ###### Functions ######
 
 def getTeamsData(url, headers):
-'''
-Requests Data about NBA teams and stores it.
-Takes API url as first and its headers as second argument.
-'''
+    '''Requests Data about NBA teams and stores it.
+    Takes API url as first and its headers as second argument.'''
 
     querystring = {"page": "0"}
     response = requests.request("GET", url+"teams", headers=headers, params=querystring)
@@ -64,10 +55,8 @@ Takes API url as first and its headers as second argument.
 
 
 def getPlayerData(url, headers):
-''' 
-Requests Data about NBA players and stores it, based on teams
-Takes API url as first and its headers as second argument.
-'''
+    '''Requests Data about NBA players and stores it, based on teams
+    Takes API url as first and its headers as second argument.'''
 
 
     print("Stared reading players data")
@@ -111,6 +100,11 @@ Takes API url as first and its headers as second argument.
 
 
 if __name__ == "__main__":
+
+    # Creating new Data dir to avoid duplicates (due appending)
+    utils.deleteDataDir()
+    utils.addDataDir()
+
     getTeamsData(url, headers)
     getPlayerData(url, headers)
 
