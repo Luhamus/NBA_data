@@ -84,10 +84,12 @@ def getPlayerData(url, headers):
                                       "height_feet" : player["height_feet"],
                                       "height_inches" : player["height_inches"]})
     
-            #add player to dataframe
+            # Add player to dataframe
             playerDf.loc[len(playerDf)] = playerSeries 
-            #add dataframe to File
-            playerDf.to_csv(playersDir+teamName+".csv", mode='a', index=False, header=False)
+
+            # Add dataframe to File
+            hdr = False if os.path.isfile(playersDir+teamName+".csv") else True
+            playerDf.to_csv(playersDir+teamName+".csv", mode='a', index=False, header=hdr)
     
         print("Page "+str(el)+" read.") 
     print("All done, check \"Data\" Dir.")
@@ -95,7 +97,6 @@ def getPlayerData(url, headers):
 
 
 
-# Requesting and storing data
 if __name__ == "__main__":
     getTeamsData(url, headers)
     getPlayerData(url, headers)
