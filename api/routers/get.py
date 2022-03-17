@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import sys
 
-sys.path.append("..")
-import utils
+#sys.path.append("/home/rasmus/Proge/STACC/api")
+from .. import utils
 
 router = APIRouter(tags=["Get requests"])
 
