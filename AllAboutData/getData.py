@@ -47,9 +47,20 @@ def getTeamsData(url, headers):
     querystring = {"page": "0"}
     response = requests.request("GET", url+"teams", headers=headers, params=querystring)
 
+    #If API_KEY doesn't match, or other error, then stop function
+    if response.status_code != 200:
+        print("Failed to fetch from API: response code: " + str(response.status_code))
+        print(response.text)
+        return
+
     teamsDf = pd.DataFrame(response.json()["data"])
     teamsDf.set_index("id")
     teamsDf = teamsDf.drop("id", axis=1)
+
+    # Creating new Data dir to avoid duplicates (due appending)
+    utils.deleteDataDir()
+    utils.addDataDir()
+
     teamsDf.to_csv(teamsFile)
     print("Teams data stored in Data directory as \"NBAteams.csv\"")
 
@@ -58,14 +69,17 @@ def getPlayerData(url, headers):
     '''Requests Data about NBA players and stores it, based on teams
     Takes API url as first and its headers as second argument.'''
 
-
-    print("Stared reading players data")
     # First request is made to get the page count to loop
     querystring = {"per_page": "100","page":"0"}
     response = requests.request("GET", url+"players", headers=headers, params=querystring)
-    pageCount = response.json()["meta"]["total_pages"]  #  Got the page count here
-    
 
+    #If API_KEY doesn't match, or other error, then stop function
+    if response.status_code != 200:
+        return
+
+    pageCount = response.json()["meta"]["total_pages"]  #  Got the page count here
+
+    print("Stared reading players data")
     print("Pages to read: "+str(pageCount)) 
     for el in range(1, pageCount+1):
     
@@ -101,9 +115,6 @@ def getPlayerData(url, headers):
 
 if __name__ == "__main__":
 
-    # Creating new Data dir to avoid duplicates (due appending)
-    utils.deleteDataDir()
-    utils.addDataDir()
 
     getTeamsData(url, headers)
     getPlayerData(url, headers)
