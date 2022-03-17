@@ -4,7 +4,15 @@ import pandas as pd
 
 app = FastAPI()
 
-#CORS STUFF HERE
+#/CORS STUFF HERE
+origins = ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 app.include_router(get.router)
 
