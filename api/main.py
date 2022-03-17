@@ -4,6 +4,7 @@ from .routers import get
 
 app = FastAPI()
 
+# To make it reachable from anywhere on web
 origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
