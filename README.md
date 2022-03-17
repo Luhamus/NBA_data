@@ -1,7 +1,7 @@
 # Overview
 This project has the functionality to fetch data about NBA and store it in csv format files.
 It also has an API to serve the data.
-API is can be found here: [https://luhamus-nba-data.herokuapp.com/](https://luhamus-nba-data.herokuapp.com/).
+API can be found here: [https://luhamus-nba-data.herokuapp.com/](https://luhamus-nba-data.herokuapp.com/).
 
 # How to use
 ## API
