@@ -1,0 +1,31 @@
+,abbreviation,city,conference,division,full_name,name
+0,ATL,Atlanta,East,Southeast,Atlanta Hawks,Hawks
+1,BOS,Boston,East,Atlantic,Boston Celtics,Celtics
+2,BKN,Brooklyn,East,Atlantic,Brooklyn Nets,Nets
+3,CHA,Charlotte,East,Southeast,Charlotte Hornets,Hornets
+4,CHI,Chicago,East,Central,Chicago Bulls,Bulls
+5,CLE,Cleveland,East,Central,Cleveland Cavaliers,Cavaliers
+6,DAL,Dallas,West,Southwest,Dallas Mavericks,Mavericks
+7,DEN,Denver,West,Northwest,Denver Nuggets,Nuggets
+8,DET,Detroit,East,Central,Detroit Pistons,Pistons
+9,GSW,Golden State,West,Pacific,Golden State Warriors,Warriors
+10,HOU,Houston,West,Southwest,Houston Rockets,Rockets
+11,IND,Indiana,East,Central,Indiana Pacers,Pacers
+12,LAC,LA,West,Pacific,LA Clippers,Clippers
+13,LAL,Los Angeles,West,Pacific,Los Angeles Lakers,Lakers
+14,MEM,Memphis,West,Southwest,Memphis Grizzlies,Grizzlies
+15,MIA,Miami,East,Southeast,Miami Heat,Heat
+16,MIL,Milwaukee,East,Central,Milwaukee Bucks,Bucks
+17,MIN,Minnesota,West,Northwest,Minnesota Timberwolves,Timberwolves
+18,NOP,New Orleans,West,Southwest,New Orleans Pelicans,Pelicans
+19,NYK,New York,East,Atlantic,New York Knicks,Knicks
+20,OKC,Oklahoma City,West,Northwest,Oklahoma City Thunder,Thunder
+21,ORL,Orlando,East,Southeast,Orlando Magic,Magic
+22,PHI,Philadelphia,East,Atlantic,Philadelphia 76ers,76ers
+23,PHX,Phoenix,West,Pacific,Phoenix Suns,Suns
+24,POR,Portland,West,Northwest,Portland Trail Blazers,Trail Blazers
+25,SAC,Sacramento,West,Pacific,Sacramento Kings,Kings
+26,SAS,San Antonio,West,Southwest,San Antonio Spurs,Spurs
+27,TOR,Toronto,East,Atlantic,Toronto Raptors,Raptors
+28,UTA,Utah,West,Northwest,Utah Jazz,Jazz
+29,WAS,Washington,East,Southeast,Washington Wizards,Wizards
