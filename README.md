@@ -6,8 +6,8 @@ It also has an API to serve the data. API can be accessed here.
 ### API
 From the api you can fetch data as follows:
 * For teams, the endpoint is "/teams" and you can fetch data as follows:
-'''
-    https//:{api_url}/teams
+'''bash
+  https//:{api_url}/teams
 '''
 * For player information, the endpoint is "/players/{team_name}
  - you can get the team name from fetching the teams data.
