@@ -1,7 +1,7 @@
 # Overview
 This project has the functionality to fetch data about NBA and store it in csv format files.
 It also has an API to serve the data.
-API is at this [https://luhamus-nba-data.herokuapp.com/](https://luhamus-nba-data.herokuapp.com/).
+API is can be found here: [https://luhamus-nba-data.herokuapp.com/](https://luhamus-nba-data.herokuapp.com/).
 
 # How to use
 ## API
@@ -14,7 +14,7 @@ You can fetch the data from API as follows:
 
 <br>
 <br>
- * For players information, you can search by the team. the endpoint is "/players/{team_name}
+* For players information, you can search by the team. the endpoint is "/players/{team_name}
  * you can get the team name from fetching the teams data from /teams.
  * Examples with Bulls, Celtics, Hawks:
  * [https://luhamus-nba-data.herokuapp.com/players/bulls](https://luhamus-nba-data.herokuapp.com/players/bulls).
