@@ -18,7 +18,7 @@ From the api you can fetch data as follows:
  * [https://luhamus-nba-data.herokuapp.com/players/bulls](https://luhamus-nba-data.herokuapp.com/players/bulls).
  * [https://luhamus-nba-data.herokuapp.com/players/celtics](https://luhamus-nba-data.herokuapp.com/players/celtics).
  * [https://luhamus-nba-data.herokuapp.com/players/hawks](https://luhamus-nba-data.herokuapp.com/players/hawks).
- - NB: you shouldn't use the "fullName", like "Chicago Bulls".
+ > :warning: You shouldn't use the "fullName", like "Chicago Bulls".
 
 ### API on localhost
 To run the API locally, you should first clone the Repo and do the following:
@@ -39,7 +39,7 @@ where reload option is for development.
 Code for fetching data in in directory AllAboutData, where the 
 fetched data will also be stored.
 To use the data fetching script, you should follow the same steps as
-for running API locally. Then you should make a file 
+for [running API locally](### API on localhost). Then you should make a file 
 ```
 .env
 ```
