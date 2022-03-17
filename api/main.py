@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import get
+from .routers import get
 import pandas as pd
 
 app = FastAPI()

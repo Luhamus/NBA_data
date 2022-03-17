@@ -2,8 +2,8 @@ import pandas as pd
 
 # Making relative paths. On windows slashes would be backwards
 # It is probably not the best way.
-relPathTeams = "../AllAboutData/Data/NBAteams.csv"
-relPathPlayers = "../AllAboutData/Data/Players/"
+relPathTeams = "../../AllAboutData/Data/NBAteams.csv"
+relPathPlayers = "../../AllAboutData/Data/Players/"
 
 def getTeamNames():
     '''

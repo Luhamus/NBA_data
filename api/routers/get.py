@@ -1,18 +1,37 @@
 from fastapi import FastAPI, APIRouter
 import numpy as np
 import pandas as pd
-import sys
-
-#sys.path.append("/home/rasmus/Proge/STACC/api")
-from .. import utils
 
 router = APIRouter(tags=["Get requests"])
+
+
+# Making relative paths. On windows slashes would be backwards
+# Though, it is probably not a good way. And the API has to be activated
+# from the project dir, for the paths to match.
+relPathTeams = "AllAboutData/Data/NBAteams.csv"
+relPathPlayers = "AllAboutData/Data/Players/"
+
+
+
+def getTeamNames():
+    '''
+    Returns dictionary with fetched teams' names as keys
+    and full_names as values.
+    '''
+
+    teamsDf = pd.read_csv(relPathTeams).to_dict()
+    team_names = {}
+    for el in range(len(teamsDf["name"])):
+        team_names.update({teamsDf["name"][el] : teamsDf["full_name"][el]})
+    return team_names
+
+
 
 @router.get("/teams")
 def getTeams():
     
-    # Getting the data from csv files and then converting into dict to be send out on get request
-    teamsDf = pd.read_csv(utils.relPathTeams).to_dict()
+    # Converting the data and converting into dict to send 
+    teamsDf = pd.read_csv(relPathTeams).to_dict()
 
     teams_dict = {}
     for el in range(len(teamsDf["name"])):
@@ -29,12 +48,12 @@ def getTeams():
 @router.get("/players/{team_name}")
 def getPlayers(team_name: str):
 
-    teamNames = utils.getTeamNames()
+    teamNames = getTeamNames()
     team_name = team_name.capitalize()  #  Capitalizing in case url is given as lowercase
     if team_name in teamNames.keys():
 
-        playersDf = pd.read_csv(utils.relPathPlayers+teamNames[team_name]+".csv")
-        playersDf = playersDf.replace({np.nan:None})  # For Json Nan must be replaced 
+        playersDf = pd.read_csv(relPathPlayers+teamNames[team_name]+".csv")
+        playersDf = playersDf.replace({np.nan:None})  #  For Json Nan must be replaced 
 
         players_dict = {}
         for el in range(len(playersDf["first_name"])):
