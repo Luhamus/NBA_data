@@ -1,20 +1,22 @@
 # Overview
 This project has the functionality to fetch data about NBA and store it in csv format files.
 It also has an API to serve the data.
-API is at this [url](https://luhamus-nba-data.herokuapp.com/).
+API is at this [https://luhamus-nba-data.herokuapp.com/](https://luhamus-nba-data.herokuapp.com/).
 
 # How to use
 ## API
-From the api you can fetch data as follows:
-* For teams, the endpoint is "/teams" and you can fetch data as follows:
+You can fetch the data from API as follows:
+* For teams, the endpoint is "/teams" and you can fetch like that:
 ```
 {api_url}/teams
 ```
   or just use [this](https://luhamus-nba-data.herokuapp.com/teams) link.
 
-* For players information, you can search by the team. the endpoint is "/players/{team_name}
- - you can get the team name from fetching the teams data from /teams.
- - Examples with Bulls, Celtics, Hawks:
+<br>
+<br>
+ * For players information, you can search by the team. the endpoint is "/players/{team_name}
+ * you can get the team name from fetching the teams data from /teams.
+ * Examples with Bulls, Celtics, Hawks:
  * [https://luhamus-nba-data.herokuapp.com/players/bulls](https://luhamus-nba-data.herokuapp.com/players/bulls).
  * [https://luhamus-nba-data.herokuapp.com/players/celtics](https://luhamus-nba-data.herokuapp.com/players/celtics).
  * [https://luhamus-nba-data.herokuapp.com/players/hawks](https://luhamus-nba-data.herokuapp.com/players/hawks).
@@ -33,13 +35,15 @@ then you can run the API on localhost, at port 8000, as follows:
 uvicorn api.main:app --reload
 ```
 where reload option is for development.
+> :warning: When you are running API locally, you should first fetch the Data to be served.
+> For that, read the next section
 
 
 ## Fetching Data
 Code for fetching data in in directory AllAboutData, where the 
 fetched data will also be stored.
 To use the data fetching script, you should follow the same steps as
-for [running API locally](### API on localhost). Then you should make a file 
+for [running API locally](#api-on-localhost). Then you should make a file 
 ```
 .env
 ```
