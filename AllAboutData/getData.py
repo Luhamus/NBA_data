@@ -57,7 +57,7 @@ def getTeamsData(url, headers):
     teamsDf.set_index("id")
     teamsDf = teamsDf.drop("id", axis=1)
 
-    # Creating new Data dir to avoid duplicates (due appending)
+    # New Data dir to avoid duplicates (due appending players later)
     utils.deleteDataDir()
     utils.addDataDir()
 
@@ -88,7 +88,7 @@ def getPlayerData(url, headers):
         response = requests.request("GET", url+"players", headers=headers, params=querystring)
         data = response.json()["data"]
         
-        # Making dataframe for each player to store it suitable file
+        # Making dataframe for each player to store it in suitable file
         for player in data:
             teamName = player["team"]["full_name"]
             playerDf = pd.DataFrame(columns=["first_name", "last_name",
@@ -114,7 +114,6 @@ def getPlayerData(url, headers):
 
 
 if __name__ == "__main__":
-
 
     getTeamsData(url, headers)
     getPlayerData(url, headers)
