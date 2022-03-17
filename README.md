@@ -1,6 +1,7 @@
 # Overview
 This project has the functionality to fetch data about NBA and store it in csv format files.
-It also has an API to serve the data. API can be accessed [here](https://luhamus-nba-data.herokuapp.com/).
+It also has an API to serve the data.
+API is at this [url](https://luhamus-nba-data.herokuapp.com/).
 
 ## How to use
 ### API
@@ -14,12 +15,12 @@ or just use [this](https://luhamus-nba-data.herokuapp.com/teams).
 * For player information, the endpoint is "/players/{team_name}
  - you can get the team name from fetching the teams data.
  '''
-    https//:{api_url}/players/{team_name}
+    {api_url}/players/{team_name}
  '''
  - Examples with Bulls, Celtics, Hawks:
- * [this](https://luhamus-nba-data.herokuapp.com/teams/bulls).
- * [this](https://luhamus-nba-data.herokuapp.com/teams/celtics).
- * [this](https://luhamus-nba-data.herokuapp.com/teams/hawks).
+ * [https://luhamus-nba-data.herokuapp.com/teams/bulls](https://luhamus-nba-data.herokuapp.com/teams/bulls).
+ * [https://luhamus-nba-data.herokuapp.com/teams/celtics](https://luhamus-nba-data.herokuapp.com/teams/celtics).
+ * [https://luhamus-nba-data.herokuapp.com/teams/hawks](https://luhamus-nba-data.herokuapp.com/teams/hawks).
  - NB: you shouldn't use the "full_name", like "Chicago Bulls".
 
 ### Fetching Data
@@ -27,7 +28,6 @@ Code for fetching data in in directory AllAboutData, where the
 fetched data will also be stored.
 To use the data fetching script, you should clone the repo and do following:
 ```bash
-git clone {repo}
 cd {cloned_repo_name}
 python -m venv venv
 source venv/bin/activate
@@ -42,7 +42,7 @@ and add your api key there like this.
 API_KEY = {your_api_key}
 ```
 You can get yourself the api key from this [link](https://rapidapi.com/theapiguy/api/free-nba/).
-Once you have done that you can use the script.
+You have to subscribe to the API, but it is free. Once you have done that you can use the script.
 ```bash
 cd AllAboutData
 python getData.py
