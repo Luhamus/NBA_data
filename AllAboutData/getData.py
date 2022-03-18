@@ -31,7 +31,7 @@ headers = {
 
 # Createing file name variables to store data in 
 if utils.whichOs() == "windows":
-    teamsFile = "Data/NBAteams.csv"
+    teamsFile = "Data\\NBAteams.csv"
     playersDir = "Data\\Players\\"
 else:
     teamsFile = "Data/NBAteams.csv"
