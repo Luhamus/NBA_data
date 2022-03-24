@@ -12,7 +12,10 @@ You can fetch the data from API as follows:
 ```
   or just use [this](https://luhamus-nba-data.herokuapp.com/teams) link.
 
-* For players information, you can search by the team. the endpoint is "/players/{team_name}
+* For players information, you can search by the team. the endpoint is 
+```
+{api_url}/players/{team_name}
+```
  * you can get the team name from fetching the teams data from /teams.
  * Examples with Bulls, Celtics, Hawks:
  * [https://luhamus-nba-data.herokuapp.com/players/bulls](https://luhamus-nba-data.herokuapp.com/players/bulls).
